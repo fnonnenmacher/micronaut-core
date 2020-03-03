@@ -1,0 +1,189 @@
+components:
+- name: "aop"
+  include:
+  - ".*/aop/src/main/java/.*"
+- name: "aop-test"
+  include:
+  - ".*/aop/src/test/groovy/.*"
+- name: "benchmarks"
+  include:
+  - ".*/benchmarks/src/jmh/resources/.*"
+  - ".*/benchmarks/src/jmh/java/.*"
+- name: "buffer-netty"
+  include:
+  - ".*/buffer-netty/src/main/java/.*"
+- name: "cli"
+  include:
+  - ".*/cli/src/main/resources/.*"
+  - ".*/cli/src/main/groovy/.*"
+- name: "cli-test"
+  include:
+  - ".*/cli/src/test/groovy/.*"
+- name: "core"
+  include:
+  - ".*/core/src/main/resources/.*"
+  - ".*/core/src/main/java/.*"
+- name: "core-test"
+  include:
+  - ".*/core/src/test/resources/.*"
+  - ".*/core/src/test/groovy/.*"
+- name: "discovery-client"
+  include:
+  - ".*/discovery-client/src/main/java/.*"
+- name: "discovery-client-test"
+  include:
+  - ".*/discovery-client/src/test/resources/.*"
+  - ".*/discovery-client/src/test/groovy/.*"
+- name: "function"
+  include:
+  - ".*/function/src/main/java/.*"
+- name: "function-test"
+  include:
+  - ".*/function/src/test/resources/.*"
+  - ".*/function/src/test/groovy/.*"
+- name: "function-client"
+  include:
+  - ".*/function-client/src/main/java/.*"
+- name: "function-client-test"
+  include:
+  - ".*/function-client/src/test/groovy/.*"
+- name: "function-web"
+  include:
+  - ".*/function-web/src/main/java/.*"
+- name: "function-web-test"
+  include:
+  - ".*/function-web/src/test/java/.*"
+  - ".*/function-web/src/test/groovy/.*"
+- name: "graal"
+  include:
+  - ".*/graal/src/main/resources/.*"
+  - ".*/graal/src/main/java/.*"
+  - ".*/graal/src/test/groovy/.*"
+- name: "http"
+  include:
+  - ".*/http/src/main/resources/.*"
+  - ".*/http/src/main/java/.*"
+  - ".*/http/src/main/kotlin/.*"
+  - ".*/http/src/test/resources/.*"
+  - ".*/http/src/test/groovy/.*"
+- name: "http-client"
+  include:
+  - ".*/http-client/src/main/resources/.*"
+  - ".*/http-client/src/main/java/.*"
+  - ".*/http-client/src/test/resources/.*"
+  - ".*/http-client/src/test/groovy/.*"
+- name: "http-netty"
+  include:
+  - ".*/http-netty/src/main/resources/.*"
+  - ".*/http-netty/src/main/java/.*"
+- name: "http-server"
+  include:
+  - ".*/http-server/src/main/java/.*"
+- name: "http-server-netty"
+  include:
+  - ".*/http-server-netty/src/main/resources/.*"
+  - ".*/http-server-netty/src/main/java/.*"
+  - ".*/http-server-netty/src/test/resources/.*"
+  - ".*/http-server-netty/src/test/groovy/.*"
+- name: "inject"
+  include:
+  - ".*/inject/src/main/resources/.*"
+  - ".*/inject/src/main/java/.*"
+  - ".*/inject/src/test/resources/.*"
+  - ".*/inject/src/test/groovy/.*"
+- name: "inject-groovy"
+  include:
+  - ".*/inject-groovy/src/main/resources/.*"
+  - ".*/inject-groovy/src/main/groovy/.*"
+  - ".*/inject-groovy/src/test/resources/.*"
+  - ".*/inject-groovy/src/test/groovy/.*"
+- name: "inject-java"
+  include:
+  - ".*/inject-java/src/main/resources/.*"
+  - ".*/inject-java/src/main/java/.*"
+  - ".*/inject-java/src/test/resources/.*"
+  - ".*/inject-java/src/test/java/.*"
+  - ".*/inject-java/src/test/groovy/.*"
+- name: "inject-java-test"
+  include:
+  - ".*/inject-java-test/src/main/groovy/.*"
+  - ".*/inject-java-test/src/test/resources/.*"
+  - ".*/inject-java-test/src/test/groovy/.*"
+- name: "jdbc"
+  include:
+  - ".*/jdbc/src/main/resources/.*"
+  - ".*/jdbc/src/main/java/.*"
+  - ".*/jdbc/src/test/resources/.*"
+  - ".*/jdbc/src/test/groovy/.*"
+- name: "management"
+  include:
+  - ".*/management/src/main/java/.*"
+  - ".*/management/src/test/resources/.*"
+  - ".*/management/src/test/groovy/.*"
+- name: "messaging"
+  include:
+  - ".*/messaging/src/main/java/.*"
+- name: "multitenancy"
+  include:
+  - ".*/multitenancy/src/main/java/.*"
+  - ".*/multitenancy/src/test/groovy/.*"
+- name: "router"
+  include:
+  - ".*/router/src/main/java/.*"
+  - ".*/router/src/main/groovy/.*"
+  - ".*/router/src/test/resources/.*"
+  - ".*/router/src/test/groovy/.*"
+- name: "runtime"
+  include:
+  - ".*/runtime/src/main/resources/.*"
+  - ".*/runtime/src/main/java/.*"
+  - ".*/runtime/src/test/resources/.*"
+  - ".*/runtime/src/test/groovy/.*"
+- name: "runtime-osx"
+  include:
+  - ".*/runtime-osx/src/main/java/.*"
+- name: "session"
+  include:
+  - ".*/session/src/main/java/.*"
+  - ".*/session/src/test/groovy/.*"
+- name: "spring"
+  include:
+  - ".*/spring/src/main/java/.*"
+  - ".*/spring/src/test/groovy/.*"
+- name: "test-suite"
+  include:
+  - ".*/test-suite/src/main/resources/.*"
+  - ".*/test-suite/src/main/java/.*"
+  - ".*/test-suite/src/test/resources/.*"
+  - ".*/test-suite/src/test/java/.*"
+  - ".*/test-suite/src/test/groovy/.*"
+- name: "test-suite-groovy"
+  include:
+  - ".*/test-suite-groovy/src/test/resources/.*"
+  - ".*/test-suite-groovy/src/test/groovy/.*"
+- name: "test-suite-helper"
+  include:
+  - ".*/test-suite-helper/src/main/resources/.*"
+  - ".*/test-suite-helper/src/main/java/.*"
+- name: "test-suite-kotlin"
+  include:
+  - ".*/test-suite-kotlin/src/test/resources/.*"
+  - ".*/test-suite-kotlin/src/test/kotlin/.*"
+- name: "test-utils"
+  include:
+  - ".*/test-utils/src/main/groovy/.*"
+- name: "tracing"
+  include:
+  - ".*/tracing/src/main/resources/.*"
+  - ".*/tracing/src/main/java/.*"
+  - ".*/tracing/src/test/resources/.*"
+  - ".*/tracing/src/test/groovy/.*"
+- name: "validation"
+  include:
+  - ".*/validation/src/main/resources/.*"
+  - ".*/validation/src/main/java/.*"
+  - ".*/validation/src/test/resources/.*"
+  - ".*/validation/src/test/groovy/.*"
+- name: "websocket"
+  include:
+  - ".*/websocket/src/main/java/.*"

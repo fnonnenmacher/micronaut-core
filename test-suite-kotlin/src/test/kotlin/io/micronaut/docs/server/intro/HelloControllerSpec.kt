@@ -16,32 +16,40 @@
 package io.micronaut.docs.server.intro
 
 // tag::imports[]
+import io.kotlintest.shouldBe
+import io.kotlintest.specs.StringSpec
 import io.micronaut.context.annotation.Property
 import io.micronaut.http.client.HttpClient
 import io.micronaut.http.client.annotation.Client
 import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.test.annotation.MicronautTest
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
 import javax.inject.Inject
 // end::imports[]
+import io.micronaut.test.extensions.kotlintest.MicronautKotlinTestExtension
+
 @Property(name = "spec.name", value = "HelloControllerSpec")
 // tag::class[]
 @MicronautTest
-class HelloControllerSpec {
+class HelloControllerSpec : StringSpec() {
 
     @Inject
-    lateinit var server: EmbeddedServer // <1>
+    lateinit var server: EmbeddedServer
 
     @Inject
     @field:Client("/")
-    lateinit var client: HttpClient // <2>
+    lateinit var client: HttpClient
 
-    @Test
-    fun testHelloWorldResponse() {
-        val rsp: String = client.toBlocking() // <3>
-                .retrieve("/hello")
-        assertEquals("Hello World", rsp) // <4>
+    init {
+// end::class[]
+// Not needed in documentation, because will be called automatically when ProjectConf set in kotlin test
+        MicronautKotlinTestExtension.instantiate(HelloControllerSpec::class) //initializes test context
+        MicronautKotlinTestExtension.beforeSpecClass(this, emptyList()) //injects variables
+// tag::class[]
+        "testHelloWorldResponse"() {
+            val rsp: String = client.toBlocking()
+                    .retrieve("/hello")
+            rsp.shouldBe("Hello World")
+        }
     }
 }
-//end::class[]
+// end::class[]
