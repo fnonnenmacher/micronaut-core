@@ -32,6 +32,7 @@ subprojects {
 
     tasks.withType(Test) {
         ignoreFailures = true
+        reports.html.enabled = false
     }
 }
 
@@ -846,7 +847,7 @@ task componentYml doLast {
     }
 }
 
-//combine all reports
+//combine all jacoco reports
 def codeCoverageReport = task codeCoverageReport(type: JacocoReport) {
 
     // Gather execution data from all subprojects
@@ -875,4 +876,12 @@ sonarqube {
         property "sonar.verbose", true
         property "sonar.coverage.jacoco.xmlReportPaths", "${rootDir}/build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
     }
+}
+
+//combine all test reports
+task testReport(type: TestReport) {
+    destinationDir = file("$buildDir/reports/all-tests")
+
+    // Include the results from the `test` task in all subprojects
+    reportOn subprojects*.tasks*.withType(Test).flatten()
 }
