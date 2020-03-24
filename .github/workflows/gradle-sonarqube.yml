@@ -31,7 +31,7 @@ jobs:
       with:
         java-version: ${{ matrix.java }}   
     - name: Build with Gradle
-      run: ./gradlew check testReport sonarqube --no-daemon --parallel --continue -Dsonar.login=${{ secrets.SONAR_LOGIN }}
+      run: ./gradlew check testReport testSuiteReport sonarqube --no-daemon --parallel --continue -Dsonar.login=${{ secrets.SONAR_LOGIN }}
     - name: Upload Jacoco Report
       uses: actions/upload-artifact@v1
       with:
@@ -42,3 +42,8 @@ jobs:
       with:
         name: test-report
         path: build/reports/all-tests
+    - name: Upload Test Suite Report
+      uses: actions/upload-artifact@v1
+      with:
+        name: test-suite-report
+        path: build/reports/test-suite

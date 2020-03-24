@@ -883,5 +883,14 @@ task testReport(type: TestReport) {
     destinationDir = file("$buildDir/reports/all-tests")
 
     // Include the results from the `test` task in all subprojects
-    reportOn subprojects*.tasks*.withType(Test).flatten()
+    reportOn subprojects.findAll {!it.name.contains('test-suite')}*.tasks*.withType(Test).flatten()
 }
+
+//combine all test reports
+task testSuiteReport(type: TestReport) {
+    destinationDir = file("$buildDir/reports/test-suite")
+
+    // Include the results from the `test` task in all subprojects
+    reportOn subprojects.findAll {it.name.contains('test-suite')}*.tasks*.withType(Test).flatten()
+}
+
